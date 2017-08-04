@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kivenZhou/react-template/issues"
   },
-  "homepage": "https://github.com/kivenZhou/react-template#readme"
+  "homepage": "https://github.com/kivenZhou/react-template#readme",
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  }
 }

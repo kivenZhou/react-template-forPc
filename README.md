@@ -1,4 +1,4 @@
-# react-template
+# react-template-forApp
 Base react, antd-mobile, webpack
 
 --------

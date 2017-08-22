@@ -1,25 +1,21 @@
 import React, { Component } from 'react'
-import Header from '../components/Header'
-import TabBars from '../components/TabBar'
-import { Button } from 'antd-mobile'
+import { DatePicker, message } from 'antd'
 
 class Home extends Component {
     constructor() {
         super()
-        this.state = {}
+        this.state = {
+            date: ''
+        }
+    }
+    handleChange(date) {
+        this.setState({ date })
     }
     render() {
         return (
-            <div>
-                <Header title='首页' />
-                
-                <TabBars>
-                    <div className="container">
-                        <p>Home</p>
-                        <img src={require('../static/img/test.jpg')} alt="" />
-                        <Button>Start</Button>
-                    </div>
-                </TabBars>
+            <div style={{ width: 400, margin: '100px auto' }}>
+                <DatePicker onChange={value => this.handleChange(value)} />
+                <div style={{ marginTop: 20 }}>当前日期：{this.state.date.toString()}</div>
             </div>
         )
     }

@@ -1,9 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
 const extractTextPlugin = require('extract-text-webpack-plugin')
-const svgSpriteDirs = [
-  require.resolve('antd-mobile').replace(/warn\.js$/, '')
-];
 
 module.exports = {
     entry: {
@@ -21,10 +18,6 @@ module.exports = {
     },
     module: {
         rules:[{
-            test: /\.svg$/,
-            loader: 'svg-sprite-loader',
-            include: svgSpriteDirs,
-        },{
             test: /\.(js|jsx)$/,
             exclude: /(node_modules)/,
             use: ['babel-loader']

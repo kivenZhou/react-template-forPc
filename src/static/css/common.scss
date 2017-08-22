@@ -1,8 +1,28 @@
 body {
     margin: 0;
     padding: 0;
-    background: #f00;
+    background: #f5f5f5;
 }
 .container {
     padding: 0.5rem;
+    img {
+        width: 100%;
+    }
+}
+
+#tab-bar.demo {
+  display: flex;
+  flex-direction: column;
+}
+#tab-bar .demoName {
+  height: 0.8rem;
+}
+#tab-bar .demo-preview-item,
+#tab-bar .demo-preview-item .am-tab-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#tab-bar .demo-preview-item .am-tab-bar {
+  background-color: white;
 }

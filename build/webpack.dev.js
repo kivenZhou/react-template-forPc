@@ -13,7 +13,9 @@ module.exports = merge(webpackBase, {
                 test: /\.(css|scss|less)$/,
                 use: [
                     'style-loader',
-                    'css-loader'
+                    'css-loader',
+                    'sass-loader',
+                    'less-loader'
                 ]
             }
         ]

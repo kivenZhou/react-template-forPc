@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Header from '../components/Header'
+import TabBars from '../components/TabBar'
 import { Button } from 'antd-mobile'
 
 class Home extends Component {
@@ -8,9 +10,16 @@ class Home extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <p>Home</p>
-                <Button>Stardddst</Button>
+            <div>
+                <Header title='首页' />
+                
+                <TabBars>
+                    <div className="container">
+                        <p>Home</p>
+                        <img src={require('../static/img/test.jpg')} alt="" />
+                        <Button>Start</Button>
+                    </div>
+                </TabBars>
             </div>
         )
     }

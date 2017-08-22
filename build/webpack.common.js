@@ -11,9 +11,9 @@ module.exports = {
     },
     output: {
         filename: 'js/[name].[hash].js',
+        publicPath: '/',
         path: path.resolve(__dirname, '../dist/'),
-        chunkFilename: "[id].chunk.js",
-        publicPath: '/'
+        chunkFilename: "[id].chunk.js"
     },
     resolve: {
         modules: ['node_modules', path.join(__dirname, '../node_modules')],
@@ -29,9 +29,18 @@ module.exports = {
             exclude: /(node_modules)/,
             use: ['babel-loader']
         },{
-            test: /\.(jpg|gif|png|svg)$/,
-            exclude: /(node_modules)/,
-            use: 'file-loader'
+            test: /\.html$/,
+            exclude:/(node_modules)/,
+            loader: 'html-loader?attrs=img:src img:data-src'
+        },{
+            test: /\.(jpg|gif|png)$/,
+            use: [{
+                loader: 'file-loader',
+                options: {
+                    limit: 8192,
+                    name: 'img/[hash:8].[name].[ext]',
+                }
+            }]
         },{
             test: /\.(woff|woff2|eot|ttf|otf)$/,
             exclude: /(node_modules)/,

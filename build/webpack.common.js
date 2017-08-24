@@ -12,10 +12,6 @@ module.exports = {
         path: path.resolve(__dirname, '../dist/'),
         chunkFilename: "[id].chunk.js"
     },
-    resolve: {
-        modules: ['node_modules', path.join(__dirname, '../node_modules')],
-		extensions: ['.web.js', '.js', '.json']
-    },
     module: {
         rules:[{
             test: /\.(js|jsx)$/,

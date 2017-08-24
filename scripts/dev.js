@@ -4,7 +4,6 @@ const webpackDevServer = require('webpack-dev-server')
 const webpackDev = require('../build/webpack.dev')
 const httpProxyMiddleware = require('http-proxy-middleware')
 const openBrowser = require('react-dev-utils/openBrowser')
-
 const compile = webpack(webpackDev)
 
 const port = 8888
@@ -12,6 +11,7 @@ const port = 8888
 const url = 'http://localhost:' + port
 
 const devServer = new webpackDevServer(compile, {
+    historyApiFallback: true,
     hot: true,
     stats: { colors: true },
     inline: true

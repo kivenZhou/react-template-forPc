@@ -10,11 +10,23 @@ module.exports = merge(webpackBase, {
     module: {
         rules: [
             {
-                test: /\.(css|scss|less)$/,
+                test: /\.css$/,
+                use:[
+                    'style-loader',
+                    'css-loader'
+                ]
+            },{
+                test: /\.(scss|sass)$/,
+                use:[
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },{
+                test: /\.less$/,
                 use: [
                     'style-loader',
                     'css-loader',
-                    'sass-loader',
                     'less-loader'
                 ]
             }

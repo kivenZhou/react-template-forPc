@@ -1,21 +1,29 @@
 import React, { Component } from 'react'
-import { DatePicker, message } from 'antd'
+import MenuList from '../components/Header'
+import LoginIn from '../components/Login'
+import { Menu, Icon } from 'antd'
+
+const SubMenu = Menu.SubMenu
+const MenuItemGroup = Menu.ItemGroup
 
 class Home extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            date: ''
+            current: 'app'
         }
     }
-    handleChange(date) {
-        this.setState({ date })
+    handleClick(e) {
+        console.log('click ', e);
+        this.setState({
+            current: e.key
+        })
     }
     render() {
         return (
-            <div style={{ width: 400, margin: '100px auto' }}>
-                <DatePicker onChange={value => this.handleChange(value)} />
-                <div style={{ marginTop: 20 }}>当前日期：{this.state.date.toString()}</div>
+            <div>
+                <MenuList />
+                <LoginIn />
             </div>
         )
     }

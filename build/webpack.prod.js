@@ -24,7 +24,7 @@ module.exports = merge(webpackBase, {
                     }]
                 })
             },{
-                test: /\.(sass|scss|less)$/,
+                test: /\.(sass|scss)$/,
                 use: extractTextPlugin.extract({
                     use: [{
                         loader : 'css-loader?importLoaders=1',
@@ -47,6 +47,24 @@ module.exports = merge(webpackBase, {
                         loader: "less-loader"
                     }]
                 })
+            },{
+                test: /\.less$/,
+                use: extractTextPlugin.extract({
+                    use: [{
+                        loader : 'css-loader?importLoaders=1',
+                        options: {
+                            sourceMap:true
+                        }
+                    },{
+                        loader : 'postcss-loader',
+                        options: {
+                            sourceMap:true,
+                            plugins: [require('autoprefixer')({})]
+                        }
+                    },{
+                        loader: "less-loader"
+                    }]
+                })
             }
         ]
     },
@@ -56,7 +74,7 @@ module.exports = merge(webpackBase, {
             verbose: true,
             dry: false
         }),
-        new extractTextPlugin('css/[name].css'),
+        new extractTextPlugin('css/[name].[hash:8].css'),
         new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false

@@ -10,19 +10,28 @@ body {
     }
 }
 
-#tab-bar.demo {
-  display: flex;
-  flex-direction: column;
+.login-form {
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 10%;
+    h2{
+        text-align: center;
+        font-size: 22px;
+        margin-bottom: 10px;
+        span{
+          font-size: 28px;
+          color: #ff5a00;
+        }
+    }
 }
-#tab-bar .demoName {
-  height: 0.8rem;
+.login-form-forgot {
+    float: right;
 }
-#tab-bar .demo-preview-item,
-#tab-bar .demo-preview-item .am-tab-bar {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+.login-form-button {
+    width: 100%;
 }
-#tab-bar .demo-preview-item .am-tab-bar {
-  background-color: white;
+.ant-form-horizontal{
+  max-width: 540px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
